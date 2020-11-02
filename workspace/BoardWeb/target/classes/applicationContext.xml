@@ -5,7 +5,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- <bean id="tv" class="polymorphism.SamsungTV" scope="singleton" init-method="initMethod" destroy-method="destoryMethod" lazy-init="true"></bean> -->
-	<bean id="tv" class="polymorphism.SamsungTV" p:speaker-ref="sony" p:price="289000">
+	<bean id="tv" class="polymorphism.SamsungTV" >
 		<!-- <property name="speaker" ref="apple"></property>
 		<property name="price" value="28000"></property> -->
 		<!-- <constructor-arg index="0" ref="apple"></constructor-arg>
@@ -16,5 +16,14 @@
 	<bean id="apple" class="polymorphism.AppleSpeaker"></bean>
 	
 	<!-- <bean id="tv" class="polymorphism.SamsungTV"></bean> -->
+	
+	<bean class="com.springbook.ioc.injection.CollectionBean" id="collectionBean">
+		<property name="addressList">
+			<list>
+				<value>서울시 강남구 역삼동</value>
+				<value>서울시 성동구 행당동</value>
+			</list>
+		</property>
+	</bean>
 
 </beans>
