@@ -6,21 +6,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.springbook.biz.board.BoardVO;
+import com.springbook.biz.common.Log4jAdvice;
+import com.springbook.biz.common.LogAdvice;
 
 @Service("boardService")
 public class BoardServiceImpl implements BoardService{
 
 	@Autowired
 	private BoardDAO boardDAO;
+	//private LogAdvice log;
+	//private Log4jAdvice log;
+	
+	public BoardServiceImpl() {
+		//log = new Log4jAdvice();
+	}
 	
 	@Override
 	public void insertBoard(BoardVO vo) {
+		//log.printLogging();
 		boardDAO.insertBoard(vo);
 		
 	}
 
 	@Override
 	public void updateBoard(BoardVO vo) {
+		//log.printLogging();
 		boardDAO.updateBoard(vo);
 		
 	}
@@ -28,6 +38,7 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public void deleteBoard(BoardVO vo) {
 		// TODO Auto-generated method stub
+		//log.printLogging();
 		boardDAO.deleteBoard(vo);
 		
 	}
@@ -35,12 +46,14 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public BoardVO getBoard(BoardVO vo) {
 		// TODO Auto-generated method stub
+		//log.printLogging();
 		return boardDAO.getBoard(vo);
 	}
 
 	@Override
 	public List<BoardVO> getBoardList(BoardVO vo) {
 		// TODO Auto-generated method stub
+		//log.printLogging();
 		return boardDAO.getBoardList(vo);
 	}
 
